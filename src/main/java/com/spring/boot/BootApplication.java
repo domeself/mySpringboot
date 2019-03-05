@@ -19,13 +19,13 @@ import java.util.Map;
 @SpringBootApplication
 public class BootApplication {
 
-    /*public static void main(String[] args)  {
+    public static void main(String[] args)  {
 
         ConfigurableApplicationContext context = SpringApplication.run(BootApplication.class, args);
-        System.out.println(context.getBean(User.class));
 
 
-    }*/
+
+    }
 
 
     @Bean

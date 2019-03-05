@@ -11,6 +11,8 @@ import com.spring.boot.configuration.TestAutoConfiguration;
 import com.spring.boot.controller.TestController;
 import com.spring.boot.services.Interfaces.IProfile;
 import com.spring.boot.services.Interfaces.ITestService;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -23,10 +25,11 @@ public class TestApplication {
     public static void main(String[] args) {
 
 
-       ConfigurableApplicationContext context = new SpringApplicationBuilder(BootApplication.class).web(WebApplicationType.SERVLET).run(args);
+       ConfigurableApplicationContext context = new SpringApplicationBuilder(BootApplication.class).web(WebApplicationType.NONE).run(args);
+       /* ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
+        BeanDefinition testController = beanFactory.getBeanDefinition("TestController.value");
+        System.out.println();*/
 
-
-        System.out.println(context.getBean(CreateConfigBean.class));
 
     }
 
